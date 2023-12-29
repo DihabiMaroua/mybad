@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Court Availability</title>
+</head>
+<body>
+    <h1>Make a Court Available/Unavailable</h1>
+    <form id="courtForm" action="/admin/court" method="post">
+        <label for="court_id">Court ID:</label>
+        <select id="court_id" name="court_id" required>
+            <option value="A">Court A</option>
+            <option value="B">Court B</option>
+            <option value="C">Court C</option>
+            <option value="D">Court D</option>
+        </select><br><br>
+
+        <label for="current_status">Status:</label>
+        <select id="current_status" name="current_status" required>
+            <option value="available">Available</option>
+            <option value="unavailable">Unavailable</option>
+        </select><br><br>
+
+        <button type="submit">Change Status</button>
+    </form>
+</body>
+</html>

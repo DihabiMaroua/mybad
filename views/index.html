@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mybad</title>
+</head>
+<body>
+    <h1>Enter your username :</h1>
+    <form action="/users" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <!-- Utilisation de deux boutons distincts -->
+        <button type="submit" name="action" value="add">Add new username</button>
+    </form>
+    <a href="/reserve">You already have a username ?</a>
+    <a href="/admin/login">Are you an admin ?</a>
+
+</body>
+</html>

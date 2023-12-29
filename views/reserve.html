@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>reserve</title>
+</head>
+<body>
+    <h1>Reserve a Badminton Court</h1>
+    <form id="reservationForm" action="/reserve" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="courtId">Court:</label>
+        <select id="courtId" name="courtId" required>
+            <option value="A">Court A</option>
+            <option value="B">Court B</option>
+            <option value="C">Court C</option>
+            <option value="D">Court D</option>
+        </select>
+        <br>
+        <label for="reservationDate">Reservation Date:</label>
+        <input type="date" id="reservationDate" name="reservationDate" required>
+        <br>
+        <label for="startTime">Start Time:</label>
+        <input type="time" id="startTime" name="startTime" required>
+        <br>
+        <button type="submit">Reserve</button>
+    </form>
+    <a href="/login">Want to see your reservations?</a>
+
+</body>
+</html>
