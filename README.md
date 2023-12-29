@@ -66,7 +66,7 @@ Remplacez les valeurs par vos propres informations de connexion MySQL.
 
 ### Création de la base de données
 
-1. Sauvegardez le script `badminton_booking_system.sql` localement.
+1. Sauvegardez le script `badminton_booking_system.sql` localement, vous trouvez le fichier de la bdd badminton_booking_system.sql dans la racine du projet.
 2. Ouvrez votre terminal MySQL ou un outil de gestion de base de données MySQL.
 3. Connectez-vous à votre serveur MySQL.
 4. Créez la base de données en exécutant : `CREATE DATABASE badminton_booking_system;`
