@@ -91,7 +91,7 @@ http://localhost:3000/
 
 ## Conception
 
-### Dictionnaire de données - Badminton Booking System
+### Dictionnaire de Données
 
 Le tableau ci-dessous décrit la structure de données pour l'API de la base de données `badminton_booking_system`.
 
@@ -115,7 +115,7 @@ Le tableau ci-dessous décrit la structure de données pour l'API de la base de 
 Ce tableau reprend la structure et les champs des différentes tables telles que définies dans votre script SQL, en fournissant des détails sur le type de données, la taille, et toute contrainte ou commentaire pertinent pour chaque colonne.
 
 
-### API Routes
+### Routes de l'API
 
 Ressources exposées par l'API.
 
@@ -139,7 +139,7 @@ Ressources exposées par l'API.
 
 
 
-### Entités (base de données)
+### Entités de la Base de Données
 
 #### User (Utilisateur)
 - `user_id` (INT) : Identifiant unique de l'utilisateur, auto-incrémenté.
@@ -167,7 +167,7 @@ Ressources exposées par l'API.
 
 
 
-### Modèle Conceptuel des Données (MCD) pour la base de données `badminton_booking_system`
+### Modèle Conceptuel de Données (MCD)
 
 Le MCD suivant décrit les entités et leurs relations dans un format de diagramme UML simplifié.
 
