@@ -95,22 +95,22 @@ http://localhost:3000/
 
 Le tableau ci-dessous décrit la structure de données pour l'API de la base de données `badminton_booking_system`.
 
-| No | Libellé/Désignation          | Code               | Type    | Obligatoire? | Taille | Commentaires                                      |
-|---:|:-----------------------------|:-------------------|:--------|:-------------|-------:|:--------------------------------------------------|
-|  0 | ID Utilisateur               | user_id            | INT     | Oui          |    -   | Clé primaire, auto-incrémentée                    |
-|  1 | Pseudo            | username           | VARCHAR | Oui          |   30   | Unique, identifiant de l'utilisateur              |
-|  2 | ID Court                     | court_id           | CHAR    | Oui          |    1   | Clé primaire, identifiant unique du court         |
-|  3 | Statut du Court              | status             | ENUM    | Oui          |    -   | Valeurs: 'available', 'unavailable'               |
-|  4 | ID Réservation               | reservation_id     | INT     | Oui          |    -   | Clé primaire, auto-incrémentée                    |
-|  5 | Date de la Réservation       | reservation_date   | DATE    | Oui          |    -   | Date de la réservation                            |
-|  6 | Heure de Début               | start_time         | TIME    | Oui          |    -   | Heure de début de la réservation                  |
-|  7 | Heure de Fin                 | end_time           | TIME    | Oui          |    -   | Heure de fin de la réservation                    |
-|  8 | Statut de la Réservation     | status             | VARCHAR | Oui          |   20   | Valeurs typiques: 'confirmed', 'canceled'         |
-|  9 | ID Utilisateur (Réservation) | user_id            | INT     | Oui          |    -   | Clé étrangère vers la table `users`               |
-| 10 | ID Court (Réservation)       | court_id           | CHAR    | Oui          |    1   | Clé étrangère vers la table `courts`              |
-| 11 | ID Admin                     | admin_id           | INT     | Oui          |    -   | Clé primaire, auto-incrémentée                    |
-| 12 | Pseudo Admin                 | admin_username     | VARCHAR | Oui          |   30   | Unique, nom d'utilisateur pour l'admin            |
-| 13 | Hash du Mot de passe Admin   | password_hash      | VARCHAR | Oui          |  255   | Hash du mot de passe pour sécurité accrue         |
+| Libellé/Désignation          | Code               | Type    | Obligatoire? | Taille | Commentaires                                      |
+|:-----------------------------|:-------------------|:--------|:-------------|-------:|:--------------------------------------------------|
+| ID Utilisateur               | user_id            | INT     | Oui          |    -   | Clé primaire, auto-incrémentée                    |
+| Pseudo            | username           | VARCHAR | Oui          |   30   | Unique, identifiant de l'utilisateur              |
+| ID Court                     | court_id           | CHAR    | Oui          |    1   | Clé primaire, identifiant unique du court         |
+| Statut du Court              | status             | ENUM    | Oui          |    -   | Valeurs: 'available', 'unavailable'               |
+| ID Réservation               | reservation_id     | INT     | Oui          |    -   | Clé primaire, auto-incrémentée                    |
+| Date de la Réservation       | reservation_date   | DATE    | Oui          |    -   | Date de la réservation                            |
+| Heure de Début               | start_time         | TIME    | Oui          |    -   | Heure de début de la réservation                  |
+| Heure de Fin                 | end_time           | TIME    | Oui          |    -   | Heure de fin de la réservation                    |
+| Statut de la Réservation     | status             | VARCHAR | Oui          |   20   | Valeurs typiques: 'confirmed', 'canceled'         |
+| ID Utilisateur (Réservation) | user_id            | INT     | Oui          |    -   | Clé étrangère vers la table `users`               |
+| ID Court (Réservation)       | court_id           | CHAR    | Oui          |    1   | Clé étrangère vers la table `courts`              |
+| ID Admin                     | admin_id           | INT     | Oui          |    -   | Clé primaire, auto-incrémentée                    |
+| Pseudo Admin                 | admin_username     | VARCHAR | Oui          |   30   | Unique, nom d'utilisateur pour l'admin            |
+| Hash du Mot de passe Admin   | password_hash      | VARCHAR | Oui          |  255   | Hash du mot de passe pour sécurité accrue         |
 
 Ce tableau reprend la structure et les champs des différentes tables telles que définies dans votre script SQL, en fournissant des détails sur le type de données, la taille, et toute contrainte ou commentaire pertinent pour chaque colonne.
 
@@ -121,19 +121,19 @@ Ressources exposées par l'API.
 
 **Note:** toutes les ressources autorisent les méthodes HTTP OPTIONS et HEAD.
 
-| No | Nom de la ressource              | URL                             | Méthode | Paramètres d'URL     | Commentaires                                                   |
-|---:|:---------------------------------|:--------------------------------|:--------|:---------------------|:---------------------------------------------------------------|
-|  0 | Authentification Admin           | `/admin/login`                  | POST    |                      | Authentification admin et génération de JWT                    |
-|  1 | Désactivation d'un Court         | `/admin/court`                  | POST    |                      | Modifier le statut d'un court, admin avec JWT                  |
-|  2 | Accueil (index.html)                         | `/`                             | GET     |                      | Page d'accueil avec formulaire                                 |
-|  3 | Création d'Utilisateur           | `/users`                        | POST    |                      | Créer un nouvel utilisateur                                    |
-|  4 | Réservation (reserve.html)                      | `/reserve`                      | GET     |                      | Afficher la page de réservation                                |
-|  5 | Création de Réservation          | `/reserve`                      | POST    |                      | Créer une nouvelle réservation                                 |
-|  6 | Liste des Réservations Utilisateur| `/users/:username/reservations`| GET     | `username`           | Récupérer les réservations d'un utilisateur spécifique         |
-|  7 | Annulation de Réservation        | `/users/:username/reservations/:reservationId` | DELETE | `username`, `reservationId` | Annuler une réservation spécifique              |
-|  8 | Login Utilisateur ( login.html)               | `/login`                        | GET     |                      | Afficher la page de login utilisateur                          |
-|  9 | Liste des Réservations par Utilisateur | `/login`                        | POST    |                      | Gérer la soumission de login et afficher les réservations      |
-| 10 | Détails Utilisateur              | `/users/:username`              | GET     | `username`           | Récupérer les détails d'un utilisateur spécifique              |
+| Nom de la ressource              | URL                             | Méthode | Paramètres d'URL     | Commentaires                                                   |
+|:---------------------------------|:--------------------------------|:--------|:---------------------|:---------------------------------------------------------------|
+| Authentification Admin           | `/admin/login`                  | POST    |                      | Authentification admin et génération de JWT                    |
+| Désactivation d'un Court         | `/admin/court`                  | POST    |                      | Modifier le statut d'un court, admin avec JWT                  |
+| Accueil (index.html)                         | `/`                             | GET     |                      | Page d'accueil avec formulaire                                 |
+| Création d'Utilisateur           | `/users`                        | POST    |                      | Créer un nouvel utilisateur                                    |
+| Réservation (reserve.html)                      | `/reserve`                      | GET     |                      | Afficher la page de réservation                                |
+| Création de Réservation          | `/reserve`                      | POST    |                      | Créer une nouvelle réservation                                 |
+| Liste des Réservations Utilisateur| `/users/:username/reservations`| GET     | `username`           | Récupérer les réservations d'un utilisateur spécifique         |
+| Annulation de Réservation        | `/users/:username/reservations/:reservationId` | DELETE | `username`, `reservationId` | Annuler une réservation spécifique              |
+| Login Utilisateur ( login.html)               | `/login`                        | GET     |                      | Afficher la page de login utilisateur                          |
+| Liste des Réservations par Utilisateur | `/login`                        | POST    |                      | Gérer la soumission de login et afficher les réservations      |
+| Détails Utilisateur              | `/users/:username`              | GET     | `username`           | Récupérer les détails d'un utilisateur spécifique              |
 
 
 
