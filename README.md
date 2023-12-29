@@ -51,7 +51,7 @@ Pour installer ces dépendances spécifiques, exécutez la commande suivante dan
 ```sh
 npm install express mysql jsonwebtoken moment
 ```
-### Configuration des variables d'environnement
+## Configuration des variables d'environnement
 
 Ajoutez les informations de connexion MySQL dans votre fichier `db.js` :
 
@@ -91,7 +91,7 @@ http://localhost:3000/
 
 ## Conception
 
-## Dictionnaire de données - Badminton Booking System
+### Dictionnaire de données - Badminton Booking System
 
 Le tableau ci-dessous décrit la structure de données pour l'API de la base de données `badminton_booking_system`.
 
