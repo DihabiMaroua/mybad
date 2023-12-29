@@ -123,8 +123,10 @@ Ressources exposées par l'API.
 
 | Nom de la ressource              | URL                             | Méthode | Paramètres d'URL     | Commentaires                                                   |
 |:---------------------------------|:--------------------------------|:--------|:---------------------|:---------------------------------------------------------------|
+| Authentification Admin (admin.html)           | `/admin/login`                  | GET    |                      | formulaire d'authentification admin                  |
 | Authentification Admin           | `/admin/login`                  | POST    |                      | Authentification admin et génération de JWT                    |
-| Désactivation d'un Court         | `/admin/court`                  | POST    |                      | Modifier le statut d'un court, admin avec JWT                  |
+| Désactivation d'un Court (court.html)        | `/admin/court`                  | GET    |                      | Afficher le formulaire de modification de statut des terrains                |
+| Désactivation d'un Court         | `/admin/court`                  | POST    |                      | Modifier le statut des terrains, admin avec JWT                  |
 | Accueil (index.html)                         | `/`                             | GET     |                      | Page d'accueil avec formulaire                                 |
 | Création d'Utilisateur           | `/users`                        | POST    |                      | Créer un nouvel utilisateur                                    |
 | Réservation (reserve.html)                      | `/reserve`                      | GET     |                      | Afficher la page de réservation                                |
