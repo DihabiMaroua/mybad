@@ -51,7 +51,7 @@ Pour installer ces dépendances spécifiques, exécutez la commande suivante dan
 ```sh
 npm install express mysql jsonwebtoken moment
 ```
-### Configuration des variables d'environnement
+### Configuration de l'Environnement
 
 Ajoutez les informations de connexion MySQL dans votre fichier `db.js` :
 
